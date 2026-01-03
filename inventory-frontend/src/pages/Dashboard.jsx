@@ -1,38 +1,38 @@
-import { useEffect, useState } from "react";
-import API from "../api";
+import React, { useEffect, useState } from "react";
 
 export default function Dashboard() {
-    const [products, setProducts] = useState([]);
-    const [categories, setCategories] = useState([]);
-    const [totalValue, setTotalValue] = useState(0);
+    const [totalProducts, setTotalProducts] = useState(0);
+    const [totalCategories, setTotalCategories] = useState(0);
 
     useEffect(() => {
-        const fetchData = async () => {
-            const p = await API.get("/products");
-            const c = await API.get("/categories");
-            setProducts(p.data);
-            setCategories(c.data);
-            let value = p.data.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-            setTotalValue(value);
-        };
-        fetchData();
+        // Fetch total products from backend
+        fetch("/api/products") // Make sure backend route exists
+            .then((res) => res.json())
+            .then((data) => setTotalProducts(data.length))
+            .catch((err) => console.log(err));
+
+        // Fetch total categories from backend
+        fetch("/api/categories") // Make sure backend route exists
+            .then((res) => res.json())
+            .then((data) => setTotalCategories(data.length))
+            .catch((err) => console.log(err));
     }, []);
 
     return (
-        <div style={{ padding: "30px" }}>
-            <h2>Inventory Dashboard</h2>
+        <div>
+            <h2>Dashboard</h2>
+
             <div className="flex-container">
+                {/* Total Products Card */}
                 <div className="card">
                     <h3>Total Products</h3>
-                    <p>{products.length}</p>
+                    <p>{totalProducts}</p>
                 </div>
+
+                {/* Total Categories Card */}
                 <div className="card">
                     <h3>Total Categories</h3>
-                    <p>{categories.length}</p>
-                </div>
-                <div className="card">
-                    <h3>Total Inventory Value</h3>
-                    <p>₹{totalValue}</p>
+                    <p>{totalCategories}</p>
                 </div>
             </div>
         </div>

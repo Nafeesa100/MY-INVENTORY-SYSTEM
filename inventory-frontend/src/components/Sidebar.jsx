@@ -11,7 +11,7 @@ export default function Sidebar() {
 
     return (
         <aside>
-            <div className="sidebar-title">Inventory</div>
+
             {links.map((link) => (
                 <Link
                     key={link.name}
