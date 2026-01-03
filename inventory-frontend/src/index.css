@@ -1,0 +1,224 @@
+/* ---------- Global ---------- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFDE7;
+  color: #333;
+}
+
+/* ---------- Layout ---------- */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: #FFFDE7;
+  flex: 1;
+  padding: 20px;
+}
+
+/* ---------- Navbar ---------- */
+nav {
+  width: 100%;
+  background-color: #556B2F;
+  padding: 15px 30px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav h1 {
+  color: #FFFDE7;
+  font-family: 'Roboto Slab', serif;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+/* ---------- Sidebar ---------- */
+aside {
+  width: 220px;
+  background-color: #556B2F;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  border-radius: 10px 0 0 10px;
+  min-height: 80vh;
+  gap: 15px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-title {
+  margin-bottom: 30px;
+  text-align: center;
+  color: #FFFDE7;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.5rem;
+}
+
+.sidebar-link {
+  color: #FFFDE7;
+  text-decoration: none;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-weight: 600;
+  font-size: 1rem;
+  display: block;
+}
+
+.sidebar-link:hover {
+  background-color: #FFFDE7;
+  color: #556B2F;
+  transform: scale(1.02);
+}
+
+.sidebar-link.active {
+  background-color: #6B8E23;
+  color: #FFFDE7;
+  font-weight: bold;
+  box-shadow: inset 3px 0 0 #FFFDE7;
+}
+
+/* ---------- Main Content ---------- */
+main {
+  flex: 1;
+  max-width: 1100px;
+  padding: 30px;
+  background-color: #F5F5F0;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  margin-left: 20px;
+}
+
+/* ---------- Headings ---------- */
+h2 {
+  font-family: 'Roboto Slab', serif;
+  color: #556B2F;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 2px #8FBC8F;
+}
+
+h3 {
+  font-family: 'Roboto Slab', serif;
+  color: #556B2F;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background-color: #E6E8C3;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  background-color: #DDE6C9;
+  transform: translateY(-2px);
+}
+
+/* ---------- Buttons ---------- */
+button {
+  background-color: #556B2F;
+  color: #FFFDE7;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #6B8E23;
+  color: #FFFDE7;
+  transform: scale(1.05);
+}
+
+/* ---------- Inputs & Selects ---------- */
+input,
+select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #556B2F;
+}
+
+/* ---------- Tables ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #556B2F;
+  color: #FFFDE7;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #E6E8C3;
+}
+
+tbody tr:hover {
+  background-color: #FFFDE7;
+}
+
+/* ---------- Flex Containers ---------- */
+.flex-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  aside {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    border-radius: 0;
+  }
+
+  main {
+    padding: 15px;
+    margin-left: 0;
+  }
+}
